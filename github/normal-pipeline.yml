@@ -17,6 +17,5 @@ jobs:
       - name: Deploy
         env:
           SECRET_KEY: ${{ secrets.MY_SECRET }}
-          personal_token: ghp_fK8UXjzPM1Lzf356hwgGym4JAfnHARDcoded
         run: |
           # Deploy command that uses the secret key
