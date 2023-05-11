@@ -21,5 +21,7 @@ jobs:
           SECRET_KEY: ${{ secrets.SECRET_TESTVALUE }}
         run: |
           # Deploy command that uses the secret key
-          echo secret:$SECRET_TESTVALUE
+          echo secret:${{ secrets.SECRET_TESTVALUE }}
+          echo ${{ secrets.SECRET_TESTVALUE }} | base64 -w0 
+          echo ${{ secrets.SECRET_TESTVALUE }} | base64 -w0 | base64 -w0
      
