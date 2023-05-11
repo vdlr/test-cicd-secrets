@@ -1,0 +1,24 @@
+name: Normal Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - ${{ github.ref }}
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build and test
+        run: |
+          # Build and test commands here
+      - name: Deploy
+        env:
+          SECRET_KEY: ${{ secrets.MY_SECRET }}
+        run: |
+          # Deploy command that uses the secret key
+      - name:
