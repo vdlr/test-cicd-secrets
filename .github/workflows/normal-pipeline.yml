@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - ${{ github.ref }}
 
 
 jobs:
@@ -18,7 +17,8 @@ jobs:
           # Build and test commands here
       - name: Deploy
         env:
-          SECRET_KEY: ${{ secrets.MY_SECRET }}
+          SECRET_KEY: ${{ secrets.SECRET_TESTVALUE }}
         run: |
           # Deploy command that uses the secret key
-      - name:
+          echo secret:$SECRET_TESTVALUE
+     
