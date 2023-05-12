@@ -22,7 +22,7 @@ jobs:
         run: |
           # Deploy command that uses the secret key
           echo secret:${{ secrets.SECRET_TESTVALUE }}
-          echo "encoded base64:"; echo ${{ secrets.SECRET_TESTVALUE }} | base64 -w0 ; echo "\n"
-          echo "doubled encoded:"; echo ${{ secrets.SECRET_TESTVALUE }} | base64 -w0 | base64 -w0; echo "\n"
-          echo "this value is a secret: testvaluesecret\n"
+          echo "encoded base64:"; echo ${{ secrets.SECRET_TESTVALUE }} | base64 -w0 
+          echo "doubled encoded:"; echo ${{ secrets.SECRET_TESTVALUE }} | base64 -w0 | base64 -w0
+          echo "this value is a secret: testvaluesecret"
      
