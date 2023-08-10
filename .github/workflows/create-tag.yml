@@ -15,9 +15,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: Checkout Repository
-      - name: create tag 
+            - name: Update xygeni.yml
+            
+      -name: version
+        id: vars
+        run: |          
+          echo "version=$(echo '0.1.2')" >> $GITHUB_OUTPUT  
+      - name: create tag ${{ steps.vars.outputs.version }} from branch ${{ github.ref_name }}
         run:  |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git tag -a 0.1.1 -m "test tag"
-          git push origin 0.1.1
+          git tag -a ${{ steps.vars.outputs.version }} -m "test tag ${{ steps.vars.outputs.version }}"
+          git push origin ${{ steps.vars.outputs.version }}
