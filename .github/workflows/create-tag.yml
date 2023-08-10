@@ -1,0 +1,16 @@
+
+
+
+on:
+  workflow_dispatch: {}
+  
+jobs:
+  build:
+    name: Package and upload
+    runs-on: ubuntu-latest
+   
+      
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Repository
+      - run: git tag -a 0.1.1 -m "test tag"
