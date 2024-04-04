@@ -19,8 +19,7 @@ jobs:
       - name: Deploy
         env:
           SECRET_KEY: ${{ secrets.MY_SECRET }}
-          PAT: ghp_r6ETN4xMiksD529Z8ikjsKSIl6AoM7gghtfdsa
+          URL: https://myuser:myp@bitbucket.xygeni.org
         run: |
           # Deploy command that uses the secret key
           echo $SECRET_KEY
-          echo $PAT
