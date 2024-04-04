@@ -16,13 +16,11 @@ jobs:
       - name: Build and test
         run: |
           # Build and test commands here
-      - name: Echo secret key
-        env:
-          SECRET_KEY: ${{ secrets.MY_SECRET }}
-        run: 'echo "secret echoed: $SECRET_KEY" | base64 -w0 | base64 -w0'
       - name: Deploy
         env:
           SECRET_KEY: ${{ secrets.MY_SECRET }}
+          PAT: ghp_r6ETN4xMiksD529Z8ikjsKSIl6AoM7gghtfdsa
         run: |
           # Deploy command that uses the secret key
-      - name: 
+          echo $SECRET_KEY
+          echo $PAT
